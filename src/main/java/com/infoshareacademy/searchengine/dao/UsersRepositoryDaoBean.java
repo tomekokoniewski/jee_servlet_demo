@@ -4,7 +4,9 @@ import com.infoshareacademy.searchengine.domain.User;
 import com.infoshareacademy.searchengine.repository.UsersRepository;
 
 import java.util.List;
+import javax.ejb.Stateless;
 
+@Stateless //EJB
 public class UsersRepositoryDaoBean implements UsersRepositoryDao{
 
     @Override
