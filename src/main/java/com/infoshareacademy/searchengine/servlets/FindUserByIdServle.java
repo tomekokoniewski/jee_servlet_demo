@@ -14,12 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
-
 @WebServlet("/find-user-by-id")
 public class FindUserByIdServle extends HttpServlet {
 
     @EJB //@Inject
+
     UsersRepositoryDao usersRepositoryDao;
 
     @Override

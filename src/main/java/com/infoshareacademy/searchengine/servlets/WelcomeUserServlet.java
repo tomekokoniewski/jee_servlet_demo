@@ -25,10 +25,10 @@ public class WelcomeUserServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
 
         writer.println("<!DOCTYPE html>");
-writer.println("<html>");
+        writer.println("<html>");
         writer.println("<body>");
 
-writer.println("Hello "+req.getParameter("name")+"</br>");
+        writer.println("Hello <br>"+req.getParameter("name")+"</br>");
         writer.println("</body>");
         writer.println("</html>");
 

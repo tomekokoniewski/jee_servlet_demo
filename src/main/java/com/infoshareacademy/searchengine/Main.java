@@ -11,7 +11,7 @@ public class Main {
 
         UsersRepositoryDaoBean usersRepositoryDaoBean = new UsersRepositoryDaoBean();
         for (User user : usersRepositoryDaoBean.getUsersList()){
-            System.out.println(user.getId()+" "+user.getLogin());
+            System.out.println(user.getId()+" "+user.getName());
         }
     }
 }
