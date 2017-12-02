@@ -2,8 +2,8 @@ package com.infoshareacademy.searchengine.dao;
 
 import com.infoshareacademy.searchengine.domain.User;
 
-import java.util.List;
 import javax.ejb.Local;
+import java.util.List;
 
 @Local //EJB
 public interface UsersRepositoryDao {

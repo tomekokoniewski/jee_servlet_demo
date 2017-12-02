@@ -3,11 +3,11 @@ package com.infoshareacademy.searchengine.dao;
 import com.infoshareacademy.searchengine.domain.User;
 import com.infoshareacademy.searchengine.repository.UsersRepository;
 
-import java.util.List;
 import javax.ejb.Stateless;
+import java.util.List;
 
 @Stateless //stan EJB
-public class UsersRepositoryDaoBean implements UsersRepositoryDao{
+public class UsersRepositoryDaoBean implements UsersRepositoryDao {
 
     @Override
     public void addUser(User user) {
@@ -15,33 +15,31 @@ public class UsersRepositoryDaoBean implements UsersRepositoryDao{
     }
 
     @Override
-    public User getUserById(int id){
+    public User getUserById(int id) {
         List<User> userList = UsersRepository.getRepository();
-        for (User user : userList){
-            if (user.getId()==id){
+        for (User user : userList) {
+            if (user.getId() == id) {
                 return user;
             }
         }
         return null;
     }
 
-
     @Override
-    public User getUserByLogin(String login){
+    public User getUserByLogin(String login) {
         List<User> userList = UsersRepository.getRepository();
-        for (User user : userList){
-            if (user.getLogin().equals(login)){
+        for (User user : userList) {
+            if (user.getLogin().equals(login)) {
                 return user;
             }
         }
         return null;
     }
 
-
     @Override
-    public List<User> getUsersList(){return UsersRepository.getRepository();}
-
-
+    public List<User> getUsersList() {
+        return UsersRepository.getRepository();
+    }
 
 
 }

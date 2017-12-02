@@ -17,7 +17,7 @@ public class AddUserServlet extends HttpServlet {
 
    @EJB
    private //?
-   UsersRepositoryDao usersRepositoryDao;
+           UsersRepositoryDao usersRepositoryDao;
 
    @Override
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
