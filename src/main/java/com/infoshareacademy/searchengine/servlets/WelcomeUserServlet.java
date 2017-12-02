@@ -1,5 +1,6 @@
 package com.infoshareacademy.searchengine.servlets;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,6 +22,13 @@ public class WelcomeUserServlet extends HttpServlet {
 
 
 
+    req.getSession().setAttribute("name", req.getParameter("name"));
+    req.setAttribute("name", req.getParameter("name"));
+
+        req.getSession().setAttribute("salary", req.getParameter("salary"));
+
+
+
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter writer = resp.getWriter();
 
@@ -31,6 +39,10 @@ public class WelcomeUserServlet extends HttpServlet {
         writer.println("Hello <br>"+req.getParameter("name")+"</br>");
         writer.println("</body>");
         writer.println("</html>");
+
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/welcome-user.jsp");
+        requestDispatcher.forward(req, resp);
+
 
     }
 }

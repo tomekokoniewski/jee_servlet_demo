@@ -5,6 +5,7 @@ import com.infoshareacademy.searchengine.domain.Gender;
 import com.infoshareacademy.searchengine.domain.User;
 
 import javax.ejb.EJB;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -126,8 +127,11 @@ public class AddUserServlet extends HttpServlet {
 
         prWr.println("</body>");
         prWr.println("</html>");
-    }
 
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/add-user.jsp");
+        requestDispatcher.forward(req, resp);
+
+    }
 
 
 
