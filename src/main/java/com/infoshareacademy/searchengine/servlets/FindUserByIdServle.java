@@ -1,11 +1,13 @@
 package com.infoshareacademy.searchengine.servlets;
 
+import com.infoshareacademy.searchengine.cdibeans.MaxPulseBean;
 import com.infoshareacademy.searchengine.dao.StatisticsRepositoryDao;
 import com.infoshareacademy.searchengine.dao.UsersRepositoryDao;
 import com.infoshareacademy.searchengine.domain.Statistics;
 import com.infoshareacademy.searchengine.domain.User;
 
 import javax.ejb.EJB;
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,6 +29,9 @@ public class FindUserByIdServle extends HttpServlet {
     UsersRepositoryDao usersRepositoryDao;
     @EJB
     StatisticsRepositoryDao statisticsRepositoryDao;
+
+    @Inject
+    MaxPulseBean maxPulseBean;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -54,6 +59,7 @@ public class FindUserByIdServle extends HttpServlet {
         }
 
         prWr.println("<p>Użytkownik o id=" + id + " to: " + user.getName() + "</p>");
+        prWr.println("Puls max "+maxPulseBean.Pulse(user.getAge(),user.getGender()));
 
         Statistics statistics = new Statistics();
         statistics.setId(id);
