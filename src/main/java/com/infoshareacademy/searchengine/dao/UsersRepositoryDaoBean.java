@@ -4,12 +4,18 @@ import com.infoshareacademy.searchengine.domain.User;
 import com.infoshareacademy.searchengine.repository.UsersRepository;
 
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @Stateless //stan EJB
 public class UsersRepositoryDaoBean implements UsersRepositoryDao, UsersRepositoryDaoRemote{
+
+    @PersistenceContext (unitName = "pUnit")
+    private EntityManager entityManager;
+
 
     @Override
     public void addUser(User user) {
