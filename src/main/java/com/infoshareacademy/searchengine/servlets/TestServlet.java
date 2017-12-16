@@ -11,22 +11,20 @@ import java.io.PrintWriter;
 
 
 @WebServlet("/welcome-user")
-public class WelcomeUserServlet extends HttpServlet {
+public class TestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-    if (req.getParameter("name")==null){
-        resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        return;
-    }
+        if (req.getParameter("name")==null){
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
 
-    req.getSession().setAttribute("name", req.getParameter("name"));
-    req.getSession().setAttribute("salary", req.getParameter("salary"));
+        req.getSession().setAttribute("name", req.getParameter("name"));
+        req.getSession().setAttribute("salary", req.getParameter("salary"));
 
-    req.setAttribute("name", req.getParameter("name"));
-
-
-
+        req.setAttribute("name", req.getParameter("name"));
+        req.setAttribute("test", req.getParameter("name"));
 
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter writer = resp.getWriter();
@@ -39,7 +37,7 @@ public class WelcomeUserServlet extends HttpServlet {
         writer.println("</body>");
         writer.println("</html>");
 
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/welcome-user.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/test.jsp");
         requestDispatcher.forward(req, resp);
 
 

@@ -12,7 +12,12 @@
         <a href='http://localhost:8080/find-user-by-id'>znajdz uzytkownika</a>
     </li>
     <li>
-        <a href='http://localhost:8080/AddUserServlet'>dodaj uzytkownika</a>
+        <a href='http://localhost:8080/add-user.jsp'>dodaj uzytkownika</a>
     </li>
-
+    <li>
+        <a href='http://localhost:8080/welcome-user?name=Tomek&salary=100'>powitaj uzytkownika</a>
+    </li>
+    <li>
+        <a href='http://localhost:8080/test?name=Tomek&salary=100'>test</a>
+    </li>
 </ui>

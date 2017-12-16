@@ -10,14 +10,15 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>Title [welcome-user.jsp]</title>
 </head>
 <body>
+
 <p>
-    ${sessionScope.name}
+Name z sesji: ${sessionScope.name}
 </p>
 <p>
-${name}
+Name z requestu: ${name}
 </p>
 
 <p>
@@ -33,3 +34,5 @@ Salary with Bonus: <c:out value="${bonus}"/>
 
 </body>
 </html>
+
+<!--  http://localhost:8080/welcome-user?name=Tomek&salary=100  -->
